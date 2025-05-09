@@ -208,7 +208,7 @@ void _mostrarDialogoProduto({Produto? produtoExistente}) {
 ### _mostrarDialogoProduto(): 
 Exibe um diálogo para criar ou editar um produto. Se um produto existente for passado como parâmetro, ele preenche os campos do formulário com os dados desse produto.
 ```dart
-void _confirmarExclusao(int id) {
+  void _confirmarExclusao(int id) {
   showDialog(
     context: context,
     builder: (_) => AlertDialog(
@@ -225,11 +225,12 @@ void _confirmarExclusao(int id) {
             foregroundColor: Colors.white,
           ),
           onPressed: () async {
+            Navigator.pop(context); 
+            
             await ProdutoService.deleteProduto(id);
 
             if (mounted) {
-              Navigator.pop(context); 
-              _carregarProdutos(); 
+
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('Produto excluído com sucesso!'),
