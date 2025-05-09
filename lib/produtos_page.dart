@@ -117,11 +117,12 @@ class _ProdutosPageState extends State<ProdutosPage> {
             foregroundColor: Colors.white,
           ),
           onPressed: () async {
+            Navigator.pop(context); 
+            
             await ProdutoService.deleteProduto(id);
 
             if (mounted) {
-              Navigator.pop(context); 
-              _carregarProdutos(); 
+
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('Produto excluído com sucesso!'),
