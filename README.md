@@ -320,6 +320,8 @@ Exibe um diálogo pedindo confirmação para excluir um produto. Se confirmado, 
 ```
 ### FutureBuilder: 
 Esse widget constrói a interface de acordo com o estado do Future. Ele aguarda os produtos serem carregados e os exibe na tela. Enquanto carrega, ele mostra um CircularProgressIndicator, e se ocorrer um erro, ele exibe uma mensagem de erro.
+### RefreshIndicator:
+Permite que o usuário atualize a lista de produtos puxando a tela de cima para baixo (gesto de pull-to-refresh). Isso chama o método _carregarProdutos() para obter a lista mais recente da API.
 
 ## produto_service.dart
 Essa classe é responsável por fazer as requisições HTTP à API para buscar, adicionar, editar ou excluir produtos.
